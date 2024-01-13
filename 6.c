@@ -18,8 +18,6 @@ void computeWeights(float kg1, float g1, float kg2, float g2)
 {
     int total_kg = kg1 + kg2;
     int total_g = g1 + g2;
-    float kg_remainder_to_g = ((kg1 + kg2) - total_kg) * 1000;
-    total_g += kg_remainder_to_g;
 
     int g_to_kg = 0;
 
@@ -27,7 +25,7 @@ void computeWeights(float kg1, float g1, float kg2, float g2)
     {
         g_to_kg = (total_g / 1000);
         total_kg += g_to_kg;
-        total_g -= 1000;
+        total_g %= 1000;
     }
 
     printf("Total weights: %dkg %dg", total_kg, total_g);
