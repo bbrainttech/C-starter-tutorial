@@ -1,34 +1,32 @@
 #include <stdio.h>
 
-void computeWeights(float, float, float, float);
+void computeLengths(float, float, float, float);
 int main()
 {
-    float kg1, kg2, g1, g2;
+    float ft1, ft2, in1, in2;
 
-    printf("\n Enter the first set of weights : ");
-    scanf("%f%f", &kg1, &g1);
-    printf("\n Enter the second set of weights : ");
-    scanf("%f%f", &kg2, &g2);
+    printf("\n Enter the first set of lengths : ");
+    scanf("%f%f", &ft1, &in1);
+    printf("\n Enter the second set of lengths : ");
+    scanf("%f%f", &ft2, &in2);
 
-    computeWeights(kg1, g1, kg2, g2);
+    computeLengths(ft1, in1, ft2, in2);
     return 0;
 }
 
-void computeWeights(float kg1, float g1, float kg2, float g2)
+void computeLengths(float ft1, float in1, float ft2, float in2)
 {
-    int total_kg = kg1 + kg2;
-    int total_g = g1 + g2;
-    float kg_remainder_to_g = ((kg1 + kg2) - total_kg) * 1000;
-    total_g += kg_remainder_to_g;
+    int total_ft = ft1 + ft2;
+    int total_in = in1 + in2;
 
-    int g_to_kg = 0;
+    int in_to_ft = 0;
 
-    while (total_g >= 1000)
+    while (total_in >= 12)
     {
-        g_to_kg = (total_g / 1000);
-        total_kg += g_to_kg;
-        total_g -= 1000;
+        in_to_ft = (total_in / 12);
+        total_ft += in_to_ft;
+        total_in %= 12;
     }
 
-    printf("Total weights: %dkg %dg", total_kg, total_g);
+    printf("Total Lenghts: %dft %din", total_ft, total_in);
 }
