@@ -18,16 +18,18 @@ int main()
 
 void computeCharge(float work_hours, float cost_of_parts)
 {
-    if (work_hours <= 0)
+    float work_charge = 120;
+    if (work_hours == 0 && cost_of_parts == 0)
     {
-        printf("No work has been done, vehicle inspect charge = %d", INSPECT_COST);
+        work_charge = 0;
     }
     else
     {
-
-        float work_charge = 120;
-        work_charge = (work_hours * CHARGE_PER_HOUR) + cost_of_parts;
-
-        printf("\n The charger of the job is : $%.2f", work_charge);
+        work_charge += cost_of_parts;
+        if (work_charge > 120)
+        {
+            work_charge = (work_hours * CHARGE_PER_HOUR) + cost_of_parts;
+        }
     }
+    printf("\n The charge of the job is : $%.2f", work_charge);
 }

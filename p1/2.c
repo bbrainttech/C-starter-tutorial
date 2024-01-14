@@ -19,7 +19,7 @@ void computeInterest(double amount)
     {
 
         double interest_rate = (interest_count / 100.0);
-        double interest = amount + (amount * interest_rate);
+        double interest = (amount * interest_rate);
 
         printf("\n Interest for %2.2lf% : %4.3lf ", interest_rate * 100, interest);
         interest_count += 0.5;

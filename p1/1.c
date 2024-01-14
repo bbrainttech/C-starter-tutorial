@@ -10,9 +10,9 @@ int main()
     return 0;
 }
 
-double toKM(double km)
+double toKM(double mile)
 {
-    return (km * MILE_UNIT);
+    return (mile * MILE_UNIT);
 }
 
 void createConvertionTable()

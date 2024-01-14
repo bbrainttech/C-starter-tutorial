@@ -17,20 +17,17 @@ void classifyTriangle(float a, float b, float c)
     {
         printf("\n Not a triangle");
     }
-    else
+    else if (a == b && b == c)
     {
 
-        if (a != b && a != c && b != c)
-        {
-            printf("\n Scalene");
-        }
-        if (a == b || a == c || b == c)
-        {
-            printf("\n Isoceles");
-        }
-        if (a == b && b == c)
-        {
-            printf("\n Equilateral");
-        }
+        printf("\n Equilateral");
+    }
+    else if (a == b || a == c || b == c)
+    {
+        printf("\n Isosceles");
+    }
+    else
+    {
+        printf("\n Scalene");
     }
 }
